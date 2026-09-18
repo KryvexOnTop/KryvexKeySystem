@@ -1,6 +1,6 @@
 --[[
     Kryvex - Loader
-    by Havoc @seancode4life
+    by Wozzy @wozzylaco
        Henne @xyzhenrik_
 ]]
 local KeySystem = {}
