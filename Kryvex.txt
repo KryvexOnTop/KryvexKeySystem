@@ -44,7 +44,7 @@ function KeySystem:CreateKeySystem(Config)
     local Keys = Config.Keys or {"", "", ""}
     local MainScriptCallback = Config.MainScriptCallback or function(success) end
     local SaveKey = false -- Key is never persisted; require it on every execution
-    local KeyFileName = Config.KeyFileName or "SilenceKey.txt"
+    local KeyFileName = Config.KeyFileName or “KryvexKey.txt"
 
     local PurpleColor = Color3.fromRGB(221, 0, 0)
     local LightPurple = Color3.fromRGB(201, 0, 0)
@@ -577,7 +577,7 @@ function KeySystem:CreateKeySystem(Config)
     }, ButtonsFrame)
 
     GetKeyButton.Activated:Connect(function()
-        local discordLink = "https://discord.gg/9eFf93Kg8D"
+        local discordLink = "https://discord.gg/53PVEE5bE"
         if setclipboard then
             setclipboard(discordLink)
             showNotification("Discord Invite Copied")
@@ -586,7 +586,7 @@ function KeySystem:CreateKeySystem(Config)
 
     local MainScript, MainGlow = createEnhancedButton({
         Font = Enum.Font.GothamBold,
-        Text = "Execute Silence",
+        Text = "Execute Kryvex",
         TextColor3 = Color3.fromRGB(255, 255, 255),
         TextSize = 16,
         BackgroundColor3 = DarkPurple,
