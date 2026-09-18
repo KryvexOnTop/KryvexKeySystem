@@ -951,7 +951,7 @@ KeySystem:CreateKeySystem({
             if scriptUrl then
                 loadstring(game:HttpGet(scriptUrl))()
             else
-                warn("[Silence]: Game not supported.")
+                warn("[Kryvex]: Game not supported.")
             end
     end
 end})
