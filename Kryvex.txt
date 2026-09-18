@@ -43,21 +43,8 @@ function KeySystem:CreateKeySystem(Config)
     local Description = Config.Description or "Input Key..."
     local Keys = Config.Keys or {"", "", ""}
     local MainScriptCallback = Config.MainScriptCallback or function(success) end
-    local SaveKey = Config.SaveKey == true
-    local KeyFileName = Config.KeyFileName or "KryvexKey.txt"
-
-    if SaveKey and type(isfile) == "function" and type(readfile) == "function" then
-        local readSuccess, savedKey = pcall(function()
-            if isfile(KeyFileName) then
-                return readfile(KeyFileName)
-            end
-        end)
-
-        if readSuccess and savedKey and ValidateKey(savedKey, Keys) then
-            MainScriptCallback(true)
-            return
-        end
-    end
+    local SaveKey = false -- Key is never persisted; require it on every execution
+    local KeyFileName = Config.KeyFileName or "SilenceKey.txt"
 
     local PurpleColor = Color3.fromRGB(221, 0, 0)
     local LightPurple = Color3.fromRGB(201, 0, 0)
@@ -852,10 +839,6 @@ function KeySystem:CreateKeySystem(Config)
             StatusLabel.BackgroundTransparency = 1
             StatusLabel.Visible = true
 
-            if SaveKey and type(writefile) == "function" then
-                pcall(writefile, KeyFileName, inputKey)
-            end
-
             playSuccessAnimation()
 
             wait(2.5)
@@ -936,10 +919,11 @@ end
 KeySystem:CreateKeySystem({
     Description = "",
     Keys = {"KryvexWozzy", "KryvexOnTop", "KryvexHub"},
-    SaveKey = true,
+    SaveKey = false,
     MainScriptCallback = function(success)
         if success then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/KryvexOnTop/KryvexPublic/main/Kryvex%20Public"))()
+
 
             getgenv().Get = setmetatable({}, {
                 __index = function(_, serviceName)
@@ -951,7 +935,7 @@ KeySystem:CreateKeySystem({
             if scriptUrl then
                 loadstring(game:HttpGet(scriptUrl))()
             else
-                warn("[Kryvex]: Game not supported.")
+                warn("[Silence]: Game not supported.")
             end
     end
 end})
