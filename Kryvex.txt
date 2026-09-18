@@ -577,7 +577,7 @@ function KeySystem:CreateKeySystem(Config)
     }, ButtonsFrame)
 
     GetKeyButton.Activated:Connect(function()
-        local discordLink = "https://discord.gg/9eFf93Kg8D"
+        local discordLink = "https://discord.gg/53PVEE5bE"
         if setclipboard then
             setclipboard(discordLink)
             showNotification("Discord Invite Copied")
