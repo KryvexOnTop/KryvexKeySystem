@@ -1,5 +1,5 @@
 --[[
-    Silence - Loader
+    Kryvex - Loader
     by Havoc @seancode4life
        Henne @xyzhenrik_
 ]]
@@ -39,7 +39,7 @@ local function Create(className, properties, parent)
 end
 
 function KeySystem:CreateKeySystem(Config)
-    local Title = "Silence"
+    local Title = "Kryvex"
     local Description = Config.Description or "Input Key..."
     local Keys = Config.Keys or {"", "", ""}
     local MainScriptCallback = Config.MainScriptCallback or function(success) end
@@ -586,7 +586,7 @@ function KeySystem:CreateKeySystem(Config)
 
     local MainScript, MainGlow = createEnhancedButton({
         Font = Enum.Font.GothamBold,
-        Text = "Execute Silence",
+        Text = "Execute Kryvex",
         TextColor3 = Color3.fromRGB(255, 255, 255),
         TextSize = 16,
         BackgroundColor3 = DarkPurple,
@@ -599,7 +599,7 @@ function KeySystem:CreateKeySystem(Config)
 
     local FooterLabel = Create("TextLabel", {
         Font = Enum.Font.GothamBold,
-        Text = "Made with ♥️ by the Silence Team",
+        Text = "Made with ♥️ by the Kryvex Team",
         TextColor3 = Color3.fromRGB(255, 0, 0),
         TextSize = 14,
         TextTransparency = 0.3,
@@ -918,11 +918,12 @@ end
 
 KeySystem:CreateKeySystem({
     Description = "",
-    Keys = {"sot", "SilenceOnTop", "SOT"},
+    Keys = {"KryvexWozzy", "KryvexOnTop", "KryvexHub"},
     SaveKey = false,
     MainScriptCallback = function(success)
         if success then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/silencedevs/SilenceScripts/refs/heads/main/Loader/Supported.luau"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/KryvexOnTop/KryvexPublic/main/Kryvex%20Public"))()
+
 
             getgenv().Get = setmetatable({}, {
                 __index = function(_, serviceName)
