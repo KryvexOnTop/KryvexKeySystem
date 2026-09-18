@@ -1,5 +1,6 @@
 --[[
     Kryvex - Loader
+    by Havoc @seancode4life
        Henne @xyzhenrik_
 ]]
 local KeySystem = {}
@@ -43,7 +44,7 @@ function KeySystem:CreateKeySystem(Config)
     local Keys = Config.Keys or {"", "", ""}
     local MainScriptCallback = Config.MainScriptCallback or function(success) end
     local SaveKey = false -- Key is never persisted; require it on every execution
-    local KeyFileName = Config.KeyFileName or “KryvexKey.txt"
+    local KeyFileName = Config.KeyFileName or "SilenceKey.txt"
 
     local PurpleColor = Color3.fromRGB(221, 0, 0)
     local LightPurple = Color3.fromRGB(201, 0, 0)
@@ -576,7 +577,7 @@ function KeySystem:CreateKeySystem(Config)
     }, ButtonsFrame)
 
     GetKeyButton.Activated:Connect(function()
-        local discordLink = "https://discord.gg/53PVEE5bE"
+        local discordLink = "https://discord.gg/9eFf93Kg8D"
         if setclipboard then
             setclipboard(discordLink)
             showNotification("Discord Invite Copied")
